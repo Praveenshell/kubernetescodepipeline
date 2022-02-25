@@ -1,12 +1,26 @@
-# syntax=docker/dockerfile:1
+FROM node:16
 
-FROM python:3.8-slim-buster
+# Create app directory
+WORKDIR /usr/src/app
 
-WORKDIR /app
+# Hardening Scripts
+USER root
+ADD cis.sh /
+RUN /bin/bash "/cis.sh"
+HEALTHCHECK CMD exit 0
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
 
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
 COPY . .
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+EXPOSE 8080
+CMD [ "node", "server.js" ]
