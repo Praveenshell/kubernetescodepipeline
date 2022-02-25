@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Container Hardening scripts for GE Specific teams - Vipul');
+  res.send('Container Hardening Done - Thanks');
 });
 
 app.listen(PORT, HOST);
