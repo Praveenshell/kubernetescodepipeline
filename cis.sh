@@ -3,6 +3,7 @@ USERNAME=noroot
 USER_UID=8001
 USER_GID=$USER_UID
 
+apt-get install curl
 
 # Create the user
 groupadd --gid $USER_GID $USERNAME \
