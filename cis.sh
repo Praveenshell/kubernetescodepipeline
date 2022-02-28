@@ -54,6 +54,7 @@ sysdirs="
   /sbin
   /usr
 "
+
 # Ensure system dirs are owned by root and not writable by anybody else.
 find $sysdirs -xdev -type d \
   -exec chown root:root {} \; \
