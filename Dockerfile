@@ -22,5 +22,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+USER nobody
+
 EXPOSE 9000
 CMD [ "node", "server.js" ]
