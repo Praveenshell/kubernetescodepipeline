@@ -1,5 +1,5 @@
 # Ubuntu Servers
-USERNAME=nobody
+USERNAME=nonuser
 USER_UID=8001
 USER_GID=$USER_UID
 
