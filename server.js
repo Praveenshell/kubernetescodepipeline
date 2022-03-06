@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('TCS DEMO - Container Hardening and Zero touch deployment);
+  res.send('TCS DEMO - Container Hardening and Zero touch deployment done successfully);
 });
 
 app.listen(PORT, HOST);
