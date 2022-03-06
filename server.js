@@ -9,7 +9,8 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Container Hardening Done on Feb 28 2021 - Soumitra');
+  res.send('TCS DEMO - Container Hardening and Zero touch deployment %date');
+   var datetime = new Date();
 });
 
 app.listen(PORT, HOST);
