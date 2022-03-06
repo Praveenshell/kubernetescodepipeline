@@ -26,3 +26,4 @@ USER nonuser
 
 EXPOSE 9000
 CMD [ "node", "server.js" ]
+
