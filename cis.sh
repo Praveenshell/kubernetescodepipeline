@@ -13,13 +13,9 @@ groupadd --gid $USER_GID $USERNAME \
 && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
 && chmod 0440 /etc/sudoers.d/$USERNAME
 
-# Avoid error `Only root may specify -c or -f` when using
-# ForceCommand with `-f` option at non-root ssh login.
-# https://www.duosecurity.com/docs/duounix-faq#can-i-use-login_duo-to-protect-non-root-shared-accounts,-or-can-i-do-an-install-without-root-privileges?
-chmod u-s /usr/sbin/login_duo
 
 # /etc/duo/login_duo.conf must be readable only by user 'user'.
-chown user:user /etc/duo/login_duo.conf
+chown nobody:nobody /etc/duo/login_duo.conf
 chmod 0400 /etc/duo/login_duo.conf
 
 # Ensure strict ownership and perms.
@@ -64,11 +60,11 @@ find / -xdev -type d -perm +0002 -exec chmod o-w {} +
 find / -xdev -type f -perm +0002 -exec chmod o-w {} +
 
 # Remove unnecessary user accounts.
-sed -i -r '/^(user|root|sshd)/!d' /etc/group
-sed -i -r '/^(user|root|sshd)/!d' /etc/passwd
+#sed -i -r '/^(user|root|sshd)/!d' /etc/group
+#sed -i -r '/^(user|root|sshd)/!d' /etc/passwd
 
 # Remove interactive login shell for everybody but user.
-sed -i -r '/^user:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
+#sed -i -r '/^user:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 
 sysdirs="
   /bin
