@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -d test:latest
+docker run -d nginx:latest sleep 30
 
 cd /data/docker-bench-security/
 
@@ -13,3 +13,5 @@ then
 else
         echo "failure"
 fi
+sleep 31
+docker rm $(docker ps -a)
