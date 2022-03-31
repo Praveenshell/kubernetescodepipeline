@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -d nginx:latest
+docker run -d test:latest
 
 cd /data/docker-bench-security/
 
