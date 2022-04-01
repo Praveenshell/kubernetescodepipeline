@@ -19,13 +19,14 @@ node {
             sh 'echo "Tests passed"'
         }
     }
+    stage('Device tests') {
   
-    stage('validate') {
+
         steps {
-            sh 'pwd'
-            sh 'bash validation.sh"'       
+            sh 'echo "Hello"'
         }
     }
+    
 }
     // stage('Push image') {
         
