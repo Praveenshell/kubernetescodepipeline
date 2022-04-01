@@ -26,7 +26,7 @@ node {
             sh 'bash /mnt/validation.sh"'
         }
     }
-
+}
     //stage('Push image') {
         
       //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
@@ -38,4 +38,4 @@ node {
      //           echo "triggering updatemanifestjob"
        //         build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
        // }
-}
+
