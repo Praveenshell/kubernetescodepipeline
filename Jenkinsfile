@@ -22,7 +22,7 @@ node {
     stage('Device tests') {
   
 
-        steps {
+        app.steps {
             sh 'echo "Hello"'
         }
     }
