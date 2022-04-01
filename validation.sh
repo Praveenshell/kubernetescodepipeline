@@ -13,5 +13,3 @@ then
 else
         echo "failure"
 fi
-sleep 31
-docker rm $(docker ps -a)
