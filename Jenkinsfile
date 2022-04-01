@@ -22,7 +22,7 @@ node {
   
     stage('validate') {
   
-        praveen {
+        step {
             sh 'cd /mnt'
             sh 'echo "$PWD"'
             sh 'bash validation.sh"'
