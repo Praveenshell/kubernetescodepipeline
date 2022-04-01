@@ -19,7 +19,7 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-    stage('Device tests') {
+    stage('Hardening Score') {
         sh 'echo "Hello"'
         sh 'chmod +x validation.sh'
         sh './validation.sh'
