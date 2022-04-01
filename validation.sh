@@ -13,7 +13,3 @@ then
 else
         echo "image_failure"
 fi
-sleep 10
-docker stop $(docker ps -a)
-sleep 1
-docker rm $(docker ps -a)
