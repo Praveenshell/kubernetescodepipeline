@@ -24,7 +24,9 @@ node {
   
 
         script {
-            sh 'bash /mnt/validation.sh"'
+            sh 'cd /mnt'
+            sh 'echo "$PWD"'
+            sh 'bash validation.sh"'
         }
     }
 }
