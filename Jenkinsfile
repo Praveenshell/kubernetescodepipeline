@@ -22,7 +22,7 @@ node {
     stage('validate') {
   
 
-        app.inside {
+        script {
             sh 'bash /mnt/validation.sh"'
         }
     }
