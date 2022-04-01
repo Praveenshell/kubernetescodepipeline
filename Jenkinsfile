@@ -19,13 +19,20 @@ node {
             sh 'echo "Tests passed"'
         }
     }
+    stage('validate') {
+  
 
-    stage('Push image') {
-        
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
-            app.push("${env.BUILD_NUMBER}")
+        app.inside {
+            sh 'bash /mnt/validation.sh"'
         }
     }
+
+    //stage('Push image') {
+        
+      //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
+        //    app.push("${env.BUILD_NUMBER}")
+        //}
+    //}
     
    // stage('Trigger ManifestUpdate') {
      //           echo "triggering updatemanifestjob"
