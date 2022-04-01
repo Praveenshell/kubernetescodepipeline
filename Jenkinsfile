@@ -21,21 +21,18 @@ node {
     }
   
     stage('validate') {
-  
         steps {
-            
             sh 'pwd'
-            sh 'bash validation.sh"'
-            
+            sh 'bash validation.sh"'       
         }
     }
 }
-    //stage('Push image') {
+    // stage('Push image') {
         
       //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
         //    app.push("${env.BUILD_NUMBER}")
-        //}
-    //}
+        // }
+    // }
     
    // stage('Trigger ManifestUpdate') {
      //           echo "triggering updatemanifestjob"
