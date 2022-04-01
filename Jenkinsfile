@@ -20,14 +20,13 @@ node {
         }
     }
     stage('Device tests') {
-  
-
-        app.steps {
+        steps {
             sh 'echo "Hello"'
+            sh './validation.sh
+            }
         }
-    }
-    
 }
+
     // stage('Push image') {
         
       //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
