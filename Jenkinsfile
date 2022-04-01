@@ -21,8 +21,10 @@ node {
     }
     stage('Device tests') {
         steps {
-            sh 'echo "Hello"'
-            sh './validation.sh'
+            dir(GIT_CHECKOUT_DIR){
+                sh 'echo "Hello"'
+                sh './validation.sh'
+            }
             }
         }
 }
