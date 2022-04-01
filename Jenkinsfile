@@ -20,13 +20,9 @@ node {
         }
     }
     stage('Device tests') {
-        steps {
-            dir(GIT_CHECKOUT_DIR){
-                sh 'echo "Hello"'
-                sh './validation.sh'
-            }
-            }
-        }
+        sh 'echo "Hello"'
+        sh './validation.sh'
+    }
 }
 
     // stage('Push image') {
