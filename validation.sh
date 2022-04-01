@@ -9,7 +9,11 @@ a=`cat /tmp/out.txt | grep -i Score: | awk {'print $3'}`
 echo "$a"
 if [ $a -gt 10 ];
 then
-        echo "success"
+        echo "image_success"
 else
-        echo "failure"
+        echo "image_failure"
 fi
+sleep 10
+docker stop $(docker ps -a)
+sleep 1
+docker rm $(docker ps -a)
