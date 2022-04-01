@@ -21,6 +21,7 @@ node {
     }
     stage('Device tests') {
         sh 'echo "Hello"'
+        sh 'chmod +x validation.sh'
         sh './validation.sh'
     }
 }
