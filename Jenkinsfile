@@ -23,7 +23,10 @@ node {
     stage('validate') {
   
         steps {
-            sh 'bash /mnt/validation.sh"'
+            
+            sh 'pwd'
+            sh 'bash validation.sh"'
+            
         }
     }
 }
