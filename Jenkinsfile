@@ -22,7 +22,7 @@ node {
     stage('Device tests') {
         steps {
             sh 'echo "Hello"'
-            sh './validation.sh
+            sh './validation.sh'
             }
         }
 }
