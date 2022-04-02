@@ -20,10 +20,33 @@ node {
         }
     }
     stage('Hardening Score') {
-        sh 'echo "Hello"'
-        sh 'chmod +x validation.sh'
-        sh './validation.sh'
-    }
+         failFast true
+            parallel {
+                stage('Building') {
+                    steps {
+                        
+                        sh 'chmod +x validation.sh'
+                        
+                        sh "./validation.sh | tee output.log"
+                        
+                        sh '! grep "image_success" output.log'
+
+                        script {
+                            BUILD_COMPLETE = true
+                        }
+                    }
+                }
+                stage('validating the logs') {
+                    steps {
+                        script {
+                            while (BUILD_COMPLETE != true) {
+                                sh '! grep "image_success" output.log'
+                            }
+                        }
+                    }
+                }
+            }
+        }
 }
 
     // stage('Push image') {
