@@ -1,6 +1,6 @@
 node {
     def app
-
+    
     stage('Clone repository') {
       
 
@@ -19,6 +19,11 @@ node {
             sh 'echo "Tests passed"'
         }
     }
+    
+    environment {
+        BUILD_COMPLETE = false
+    }
+    
     stage('Hardening Score') {
          failFast true
             parallel {
