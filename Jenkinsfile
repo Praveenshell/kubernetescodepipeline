@@ -24,4 +24,5 @@ node {
          sh "./validation.sh | tee output.log"
          sh '! grep "image_success" output.log'
      }
+    }
 }
