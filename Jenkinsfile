@@ -21,7 +21,7 @@ node {
        
      stage('Hardening Score') {
          sh 'chmod +x validation.sh'
-         sh "./validation.sh
+         sh "./validation.sh"
      }
     }
 }
