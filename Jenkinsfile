@@ -25,7 +25,14 @@ pipeline {
             }
         }
         stage ('valid') {
-            sh 'echo Machi working'
+            steps {
+                script {
+                    while (Build_complete != true) {
+                        sh '! grep "image_failure" output.log'
+                        sh 'echo "Machi working"'
+                    }
+                }
+            }
         }            
     }
 }
