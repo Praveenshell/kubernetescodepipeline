@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    def app
     environment {
         Build_complete = true
     }
