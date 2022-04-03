@@ -21,8 +21,7 @@ node {
        
      stage('Hardening Score') {
          sh 'chmod +x validation.sh'
-         sh "./validation.sh | tee output.log"
-         sh '! grep "image_success" output.log'
+         sh "./validation.sh
      }
     }
 }
