@@ -1,27 +1,33 @@
-node {
-    def app
-    
-    stage('Clone repository') {
-      
-
-        checkout scm
+pipeline {
+    agent any
+    environment {
+        Build_complete = true
     }
-
-    stage('Build image') {
-  
-       app = docker.build("praveenshell123/test")
-    }
-
-    stage('Test image') {
-  
-
-        app.inside {
-            sh 'echo "Tests passed"'
+    stages {
+        stage ('Clone repositroy') {
+            checkout scm
         }
-       
-     stage('Hardening Score') {
-         sh 'chmod +x validation.sh'
-         sh "./validation.sh"
-     }
+        stage ('Build Image') {
+            app = docker.build("praveenshell123/test")
+        }
+        stage ('Test Image') {
+            app.inside {
+                sh 'echo "Test Passed"
+            }
+        }
+        
+        stage('Hardening Score') {
+            sh 'chmod +x validation.sh'
+            sh "./validation.sh | tee output.log"
+            sh '! grep "image_failure" output.log'
+            script {
+                Build_complete = true
+            }
+        }
+        stage ('valid') {
+            sh 'echo Machi working'
+        }            
     }
 }
+            
+            
