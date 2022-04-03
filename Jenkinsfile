@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    def app
     environment {
         Build_complete = true
     }
     stages {
+        def app
         stage ('Clone repositroy') {
             checkout scm
         }
