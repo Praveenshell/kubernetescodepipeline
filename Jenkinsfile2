@@ -19,6 +19,11 @@ node {
     }
     stage ('validate') {
         sh 'value=`cat out.txt | grep -i image_success`'
-        sh 'echo $VALUE'
+        if ($VALUE == image_success) {
+            echo "The message is $VALUE run"
+            else
+            echo "The message is not the $VALUE"
+            }
+        
         }
 }
