@@ -26,7 +26,7 @@ node {
     stage('Test2') {
             sh './out1.sh'
             echo '1. *************'
-            echo "$STATUS"
+            echo 'env.STATUS'
             echo '2. *************'
             if (env.STATUS == 'SUCCESS5') {
                 echo 'Its success'
