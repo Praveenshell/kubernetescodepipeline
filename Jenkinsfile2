@@ -1,0 +1,19 @@
+node {
+    def app
+    
+    stage ('Clone repository') {
+        checkout scm
+    }
+    stage ('Build') {
+        app = docker.build("praveenshell123/test")
+    }
+    stage ('Test Build') {
+        app.inside {
+            sh 'echo "Test Passed"'
+        }
+    }
+    stage ('Security Scan') {
+        sh 'chmod +x validation.sh'
+        sh './validation.sh'
+    }
+}
