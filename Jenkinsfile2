@@ -38,7 +38,7 @@ node {
     stage('test3') {
             //steps {
                 script {
-                    if (env.STATUS == 'SUCCESS') {
+                    if (env.STATUS == 'SUCCESS5') {
                         echo 'I only execute on the master branch'
                     } else {
                         echo 'I execute elsewhere'
