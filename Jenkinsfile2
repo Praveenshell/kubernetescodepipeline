@@ -38,7 +38,7 @@ node {
     stage('Test3') {
             echo '3. *************'
             sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out1.sh'
-            echo '4. *************'
+            //echo '4. *************'
             sh 'A=`echo $?`'
             echo '5. *************'
             sh 'echo $A'
@@ -46,7 +46,7 @@ node {
             echo 'env.STATUS'
             echo '7. *************'
             //if (env.STATUS == 'SUCCESS') {
-            if ($A == '0') {
+            if (env.A == '0') {
                 echo 'Its success'
             } else {
                 echo 'Its not success'
