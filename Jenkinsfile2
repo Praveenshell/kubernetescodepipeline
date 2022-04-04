@@ -40,8 +40,8 @@ node {
             sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out1.sh'
             //echo '4. *************'
             //sh 'A=`echo $?`'
-            def A
-            sh 'A=`echo $?`'
+            def A = `echo $?`
+            //sh 'A=`echo $?`'
             echo '5. *************'
             sh 'echo $A'
             echo '6. *************'
