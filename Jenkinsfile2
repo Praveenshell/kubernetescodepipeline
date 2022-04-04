@@ -19,6 +19,6 @@ node {
     }
     stage ('validate') {
         sh 'value=`cat out.txt | grep -i image_success`'
-        sh 'echo "$value"'
+        sh 'echo $value'
         }
 }
