@@ -40,14 +40,14 @@ node {
             sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out1.sh'
             //echo '4. *************'
             //sh 'A=`echo $?`'
-            def role = 'sh 'A=`echo $?`''
+            sh 'A=`echo $?`'
             //echo '5. *************'
             //sh 'echo $A'
             //echo '6. *************'
             //echo 'params.A'
             //echo '7. *************'
             //if (env.STATUS == 'SUCCESS') {
-            if (role == '0') {
+            if (A == '0') {
                 echo 'Its success'
             } else {
                 echo 'Its not success'
