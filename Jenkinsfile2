@@ -24,9 +24,10 @@ node {
     }
     
     stage('Test2') {
-            ". /var/lib/jenkins/workspace/OWNSKIP/out1"
-            echo "$STATUS"
-            if (env.STATUS == 'SUCCESS1') {
+            //. /var/lib/jenkins/workspace/OWNSKIP/out1
+            sh './var/lib/jenkins/workspace/OWNSKIP/out1.sh'
+            echo $STATUS
+            if (env.STATUS == 'SUCCESS4') {
                 echo 'Its success'
             } else {
                 echo 'Its not success'
