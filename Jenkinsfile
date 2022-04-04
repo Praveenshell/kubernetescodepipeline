@@ -30,7 +30,7 @@ pipeline {
                 script {
                     while (Build_complete != true) {
                         sh '! grep "image_failure" output.log'
-                        sh 'echo "Machi working"'
+                        sh 'echo "skip broken - executed following stage"'
                     }
                 }
             }
