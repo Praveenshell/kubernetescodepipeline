@@ -43,7 +43,7 @@ node {
             echo '5. *************'
             sh 'echo $A'
             echo '6. *************'
-            echo 'env.STATUS'
+            echo 'env.A'
             echo '7. *************'
             //if (env.STATUS == 'SUCCESS') {
             if (env.A == '0') {
