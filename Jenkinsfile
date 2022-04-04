@@ -1,8 +1,5 @@
-pipeline {
-    agent any
-    environment {
-        Build_complete = true
-    }
+node {
+    def app
     stages {
         def app
         stage ('Clone repositroy') {
