@@ -34,5 +34,18 @@ node {
                 echo 'Its not success'
             }                        
         } 
+        
+    stage(3test3') {
+            steps {
+                script {
+                    if (env.STATUS == 'SUCCESS') {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                    }
+                }
+            }
+        }
+    
     //
 }
