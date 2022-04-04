@@ -19,6 +19,8 @@ node {
     }
     
     //Add
-    
+    stage ('Test') {
+        echo "Testing123"
+    }
     //
 }
