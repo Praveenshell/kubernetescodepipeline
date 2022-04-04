@@ -37,7 +37,7 @@ node {
     
     stage('Test3') {
             echo '3. *************'
-            sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out2.sh'
+            `ls /var/lib/jenkins/workspace/OWNSKIP/out2.sh`
             //echo '4. *************'
             //sh 'A=`echo $?`'
             sh 'A=`echo $?`'
