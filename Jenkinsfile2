@@ -33,9 +33,23 @@ node {
             } else {
                 echo 'Its not success'
             }                        
+        }
+    
+    stage('Test3') {
+            sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out2.sh'
+            sh 'A=`echo $?`'
+            sh 'echo $A'
+            echo '1. *************'
+            echo 'env.STATUS'
+            echo '2. *************'
+            if (env.STATUS == 'SUCCESS') {
+                echo 'Its success'
+            } else {
+                echo 'Its not success'
+            }                        
         } 
         
-    stage('test3') {
+    stage('Test4') {
             //steps {
                 script {
                     if (env.STATUS == 'SUCCESS5') {
