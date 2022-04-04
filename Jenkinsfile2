@@ -17,4 +17,8 @@ node {
         sh './validation.sh > out.txt'
         sh 'cat out.txt'
     }
+    
+    //Add
+    
+    //
 }
