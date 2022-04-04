@@ -45,7 +45,8 @@ node {
             echo '6. *************'
             echo 'env.STATUS'
             echo '7. *************'
-            if (env.STATUS == 'SUCCESS') {
+            //if (env.STATUS == 'SUCCESS') {
+            if (A = 0) {
                 echo 'Its success'
             } else {
                 echo 'Its not success'
