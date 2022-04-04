@@ -35,14 +35,16 @@ node {
             }                        
         } 
         
-    stage(3test3') {
+    stage(test3') {
             steps {
                 script {
+                    echo '3. *************'
                     if (env.STATUS == 'SUCCESS') {
                         echo 'I only execute on the master branch'
                     } else {
                         echo 'I execute elsewhere'
                     }
+                    echo '4. *************'
                 }
             }
         }
