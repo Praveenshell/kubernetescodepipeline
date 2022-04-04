@@ -22,5 +22,14 @@ node {
     stage ('Test') {
         echo "Testing123"
     }
+    
+    stage('Test2') {
+            . /var/lib/jenkins/workspace/OWNSKIP/out1
+            if (env.STATUS == 'SUCCESS') {
+                echo 'Its success'
+            } else {
+                echo 'Its not success'
+            }                        
+        } 
     //
 }
