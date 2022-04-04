@@ -35,7 +35,7 @@ node {
             }                        
         } 
         
-    stage(test3') {
+    stage('test3') {
             steps {
                 script {
                     echo '3. *************'
@@ -44,9 +44,10 @@ node {
                     } else {
                         echo 'I execute elsewhere'
                     }
+                    echo '4. *************'
                 }
             }
-        //}
+        }
     
     //
 }
