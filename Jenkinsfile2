@@ -37,13 +37,13 @@ node {
     
     stage('Test3') {
             echo '3. *************'
-            ls /var/lib/jenkins/workspace/OWNSKIP/out2.sh
+            sh 'ls /var/lib/jenkins/workspace/OWNSKIP/out2.sh'
             //echo '4. *************'
             //sh 'A=`echo $?`'
             sh 'A=`echo $?`'
-            //echo '5. *************'
-            //sh 'echo $A'
-            //echo '6. *************'
+            echo '5. *************'
+            sh 'echo $A'
+            echo '6. *************'
             //echo 'params.A'
             //echo '7. *************'
             //if (env.STATUS == 'SUCCESS') {
@@ -54,18 +54,6 @@ node {
             }
             echo '8. *************'
         } 
-        
-    stage('Test4') {
-            //steps {
-                script {
-                    if (env.STATUS == 'SUCCESS5') {
-                        echo 'I only execute on the master branch'
-                    } else {
-                        echo 'I execute elsewhere'
-                    }
-                }
-            //}
-        }
-    
+          
     //
 }
