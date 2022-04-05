@@ -8,13 +8,14 @@ cd docker-bench-security
 sudo chmod +x docker-bench-security.sh
 sudo bash docker-bench-security.sh > /jobsdata/stdout.txt
 chmod +x /jobsdata/stdout.txt
-a=`cat /jobsdata/stdout.txt | grep -i Score: | awk {'print $3'}`
+a=`cat /jobsdata/stdout.txt | grep -i Score:`
+// | awk {'print $3'}`
 echo "$a"
 if [ $a -gt 5 ];
 then
-        echo "image_successfully deployed the score is $a"
+        echo "success"
 else
-        echo "image_failure"
+        echo "failure"
 fi
 #cp -f /jobsdata/stdout.txt /jobsdata/stdout-`date`.txt
 #rm -f /jobsdata/stdout.txt
