@@ -19,16 +19,17 @@ node {
         }
         echo "${myVar}"
     }
-    stage('Stage 2') {
-        steps {
+   stage('Stage 3') {
+       steps {
             script {
-                if (myVar == 'success') {
-                    echo 'SUCCESS **************'
-                } else {
-                    echo 'Not SUCCESS *********'
-                    }
+                //if (env.STATUS == 'SUCCESS1') {
+                    if (myVar == 'success') {
+                        echo 'SUCCESS **************'
+                            } else {
+                        echo 'Not SUCCESS *********'
+                            }
+                        }
                 }
-            }
     }
         
         
