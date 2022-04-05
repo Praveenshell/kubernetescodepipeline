@@ -18,7 +18,8 @@ node {
             myVar = readFile('out.txt').trim()
         }
         echo "${myVar}"
-        echo "Testing score is $SCORE"
+        echo "Please find the checks and score below"
+        echo "`cat /jobsdata/stdout.txt | tail -n3 | awk {'print $2,$3'}`"
     }
    stage('Stage 3') {
       // steps {
@@ -35,10 +36,7 @@ node {
           //              }
             //    }
     }
-        
-        
-        
-        
+         
    // stage('Push image') {
      //   when {
        //   expression { myVar == 'success' }
