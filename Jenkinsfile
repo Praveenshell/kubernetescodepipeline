@@ -18,5 +18,8 @@ node {
             myVar = readFile('out.txt').trim()
         }
         echo "${myVar}"
+        echo "${myVar}"
+        echo "${myVar}"
+        echo "${myVar}"
     }
 }
