@@ -18,6 +18,14 @@ node {
             myVar = readFile('out.txt').trim()
         }
         echo "${myVar}"
-        echo "${myVar}"
+    }
+    stage('Push image') {
+        when {
+            expression { myVar == 'success' }
+            }
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
+            app.push("${env.BUILD_NUMBER}")
+            }
+        }
     }
 }
