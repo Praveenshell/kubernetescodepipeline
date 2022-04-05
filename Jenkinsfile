@@ -19,6 +19,21 @@ node {
         }
         echo "${myVar}"
     }
+    stage('Stage 2') {
+        steps {
+            script {
+                if (${myVar} == 'success') {
+                    echo 'SUCCESS **************'
+                } else {
+                    echo 'Not SUCCESS *********'
+                    }
+                }
+            }
+    }
+        
+        
+        
+        
    // stage('Push image') {
      //   when {
        //   expression { myVar == 'success' }
