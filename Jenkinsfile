@@ -19,7 +19,5 @@ node {
         }
         echo "${myVar}"
         echo "${myVar}"
-        echo "${myVar}"
-        echo "${myVar}"
     }
 }
