@@ -3,7 +3,7 @@ docker run -d nginx:latest sleep 30 > /dev/null 2>&1
 
 unzip docker-bench-security.zip
 cd docker-bench-security
-bash docker-bench-security.sh | tee /jobsdata/stdout.txt
+bash docker-bench-security.sh > /jobsdata/stdout.txt
 chmod +x /jobsdata/stdout.txt
 a=`cat /jobsdata/stdout.txt | grep -i Score: | awk {'print $3'}`
 echo "$a"
