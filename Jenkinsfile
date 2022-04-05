@@ -25,6 +25,9 @@ node {
                 //if (env.STATUS == 'SUCCESS1') {
                     if (myVar == 'success') {
                         echo 'SUCCESS **************'
+                        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
+                               app.push("${env.BUILD_NUMBER}")
+                        }
                             } else {
                         echo 'Not SUCCESS *********'
                             }
