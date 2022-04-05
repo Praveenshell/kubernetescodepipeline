@@ -21,8 +21,8 @@ node {
     }
     stage('Push image') {
         when {
-            expression { myVar == 'success' }
-            }
+          expression { myVar == 'success' }
+        }
         echo "what am i doing here"            
      }
 }
