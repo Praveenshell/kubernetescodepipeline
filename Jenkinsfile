@@ -19,7 +19,7 @@ node {
         }
         echo "${myVar}"
         echo "Please find the checks and score below"
-        echo "`cat /jobsdata/stdout.txt | tail -n3 | awk {'print $2,$3'}`"
+        echo '`cat /jobsdata/stdout.txt | tail -n3 | awk {'print $2,$3'}`'
     }
    stage('Stage 3') {
       // steps {
