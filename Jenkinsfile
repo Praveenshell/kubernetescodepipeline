@@ -1,6 +1,5 @@
 node {
     def app
-    stages {
         stage ('Clone repositroy') {
             checkout scm
         }
@@ -16,6 +15,5 @@ node {
             sh 'chmod +x validation.sh'
             sh "./validation.sh | tee output.log"
             sh "echo `cat output.log`"
-           }
-    }      
+        }
 }
