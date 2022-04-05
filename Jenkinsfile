@@ -19,10 +19,10 @@ node {
         }
         echo "${myVar}"
     }
-    stage('Push image') {
-        when {
-          expression { myVar == 'success' }
-        }
-        echo "what am i doing here"            
-     }
+   // stage('Push image') {
+     //   when {
+       //   expression { myVar == 'success' }
+        // }
+        // echo "what am i doing here"            
+    // }
 }
