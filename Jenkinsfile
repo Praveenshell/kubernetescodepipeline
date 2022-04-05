@@ -8,7 +8,7 @@ node {
     }
     stage ('Test Image') {
         app.inside {
-            sh 'echo "Test Passed'
+            sh 'echo "Test Passed"'
         }
     }
     stage ('Hardening scripts') {
