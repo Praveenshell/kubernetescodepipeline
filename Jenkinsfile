@@ -11,9 +11,9 @@ node {
             sh 'echo "Test Passed'
         }
     }
-    stage ('Hardening.sh') {
+    stage ('Hardening scripts') {
         sh 'chmod +x validation.sh'
-        sh "./validation.sh > out.txt"
+        sh './validation.sh > out.txt'
         script {
             myVar = readFile('out.txt').trim()
         }
