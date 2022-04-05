@@ -1,7 +1,7 @@
 #!/bin/bash
 docker run -d nginx:latest sleep 30 > /dev/null 2>&1
 
-unzip docker-bench-security.zip
+unzip docker-bench-security.zip > /dev/null 3>&1
 cd docker-bench-security
 bash docker-bench-security.sh > /jobsdata/stdout.txt
 chmod +x /jobsdata/stdout.txt
@@ -13,5 +13,5 @@ then
 else
         echo "image_failure"
 fi
-cp -f /jobsdata/stdout.txt /jobsdata/stdout-`date`.txt
+#cp -f /jobsdata/stdout.txt /jobsdata/stdout-`date`.txt
 rm -f /jobsdata/stdout.txt
