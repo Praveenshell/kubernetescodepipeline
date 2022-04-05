@@ -1,6 +1,6 @@
 docker run -d nginx:latest sleep 30 > /dev/null 2>&1
 
-rm -rf docker-bench-security
+sudo rm -rf docker-bench-security
 
 unzip docker-bench-security.zip > /dev/null 3>&1
 cd docker-bench-security
