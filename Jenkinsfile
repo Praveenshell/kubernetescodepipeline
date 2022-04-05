@@ -18,7 +18,7 @@ node {
             myVar = readFile('out.txt').trim()
         }
         echo "${myVar}"
-        echo "Testing score $a "
+        sh 'echo "Testing score is `$A`"'
     }
    stage('Stage 3') {
       // steps {
