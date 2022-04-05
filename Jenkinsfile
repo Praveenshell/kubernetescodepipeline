@@ -22,7 +22,7 @@ node {
     stage('Stage 2') {
         steps {
             script {
-                if (${myVar} == 'success') {
+                if (myVar == 'success') {
                     echo 'SUCCESS **************'
                 } else {
                     echo 'Not SUCCESS *********'
