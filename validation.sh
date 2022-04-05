@@ -15,4 +15,4 @@ else
         echo "image_failure"
 fi
 #cp -f /jobsdata/stdout.txt /jobsdata/stdout-`date`.txt
-rm -f /jobsdata/stdout.txt
+#rm -f /jobsdata/stdout.txt
