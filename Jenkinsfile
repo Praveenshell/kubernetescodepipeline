@@ -23,10 +23,8 @@ node {
         when {
             expression { myVar == 'success' }
             }
-        steps {
-            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_praveen') {
-                app.push("${env.BUILD_NUMBER}")
-            }
+        echo "${myVar}"
+        echo "what am i doing here"
         }
             
      }
