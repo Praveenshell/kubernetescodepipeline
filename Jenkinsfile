@@ -12,26 +12,9 @@ pipeline {
                 sh 'echo "Test Passed"'
             }
         }
-        
         stage('Hardening Score') {
             sh 'chmod +x validation.sh'
             sh "./validation.sh | tee output.log"
-            sh '! grep "image_failure" output.log'
-            script {
-                Build_complete = true
-            }
-        }
-        stage ('valid') {
-            steps {
-                script {
-                    while (Build_complete != true) {
-                        sh '! grep "image_failure" output.log'
-                        sh 'echo "skip broken - executed following stage"'
-                    }
-                }
-            }
-        }            
-    }
-}
-            
-            
+            sh "echo `cat output.log`
+           }
+    }      
