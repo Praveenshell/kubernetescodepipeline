@@ -1,7 +1,7 @@
 #!/bin/bash
 docker run -d nginx:latest sleep 30
 
-tar -xvf docker-bench-security-master (1).zip
+tar -xvf docker-bench-security-master.zip
 bash docker-bench-security/docker-bench-security.sh > /mnt/stdout.txt
 chmod +x /mnt/stdout.txt
 a=`cat /mnt/stdout.txt | grep -i Score: | awk {'print $3'}`
