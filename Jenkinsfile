@@ -19,7 +19,7 @@ node {
         }
         echo "${myVar}"
         echo "Please find the checks and score below"
-        sh "echo `cat /jobsdata/stdout.txt | tail -n3 `"
+        sh "echo `cat /jobsdata/stdout.txt | tail -n3 | cut -c 8-30`"
     }
    stage('Stage 3') {
       // steps {
