@@ -15,6 +15,6 @@ pipeline {
         stage('Hardening Score') {
             sh 'chmod +x validation.sh'
             sh "./validation.sh | tee output.log"
-            sh "echo `cat output.log`
+            sh "echo `cat output.log`"
            }
     }      
