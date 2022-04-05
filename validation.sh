@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -d nginx:latest sleep 30
+docker run -d nginx:latest sleep 30 > /dev/null 2>&1
 
 tar -xvf docker-bench-security-master.zip
 bash docker-bench-security/docker-bench-security.sh > /mnt/stdout.txt
