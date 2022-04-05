@@ -12,7 +12,7 @@ a=`cat /jobsdata/stdout.txt | grep -i Score: | awk {'print $3'}`
 echo "$a"
 if [ $a -gt 5 ];
 then
-        echo "image_success"
+        echo "image_successfully deployed the score is $a"
 else
         echo "image_failure"
 fi
