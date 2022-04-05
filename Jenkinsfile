@@ -23,8 +23,6 @@ node {
         when {
             expression { myVar == 'success' }
             }
-        echo "what am i doing here"
-        }
-            
+        echo "what am i doing here"            
      }
 }
