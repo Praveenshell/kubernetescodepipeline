@@ -14,10 +14,9 @@ node {
     stage ('Hardening scripts') {
         sh 'chmod +x validation.sh'
         sh "./validation.sh > out.txt"
-        sh "echo 'cat out.txt'"
-       // script {
-         //   myVar = readFile('out.txt').trim()
-       // }
-       // echo "${myVar}"
+        script {
+            myVar = readFile('out.txt').trim()
+        }
+        echo "${myVar}"
     }
 }
