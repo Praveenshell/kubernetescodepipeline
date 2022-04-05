@@ -1,19 +1,22 @@
 node {
     def app
-        stage ('Clone repositroy') {
-            checkout scm
+    stage ('clone repository') {
+        checkout scm
+    }
+    stage ('Build Image') {
+        app = docker.build("praveenshell123/test")
+    }
+    stage ('Test Image') {
+        app.inside {
+            sh 'echo "Test Passed'
         }
-        stage ('Build Image') {
-            app = docker.build("praveenshell123/test")
+    }
+    stage ('Hardening.sh') {
+        sh 'chmod +x validation.sh'
+        sh "./validation.sh > out.txt"
+        script {
+            myVar = readFile('out.txt').trim()
         }
-        stage ('Test Image') {
-            app.inside {
-                sh 'echo "Test Passed"'
-            }
-        }
-        stage('Hardening Score') {
-            sh 'chmod +x validation.sh'
-            sh "./validation.sh | tee output.log"
-            sh "echo `cat output.log`"
-        }
+        echo "${myVar}"
+    }
 }
