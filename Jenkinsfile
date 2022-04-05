@@ -18,3 +18,4 @@ pipeline {
             sh "echo `cat output.log`"
            }
     }      
+}
